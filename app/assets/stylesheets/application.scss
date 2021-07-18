@@ -1,0 +1,160 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+@import "bootstrap/scss/bootstrap";
+* {
+    margin: 0;
+}
+
+html, body {
+    background-color: $secondary;
+    color: $light;
+    height: 100%;
+}
+
+.wrapper {
+    min-height: 100%;
+    height: auto !important;
+    margin: 0 auto -400px;
+}
+
+.footer, .push {
+    min-height: 400px;
+    clear: both;
+}
+
+a {
+    text-decoration: none;
+    color: $light;
+}
+
+a:link {
+    color:#fff;
+}
+
+a:visited {
+    color:#fff;
+}
+
+a:hover {
+    color:#fff;
+}
+
+a:active {
+    color:#fff;
+}
+
+.nav-item:hover {
+    background: $secondary;
+}
+
+.nav-user-link a {
+    color: $light;
+}
+
+.avatar {
+    border-radius: 100%;
+}
+
+.search {
+    margin-left:180px;
+    display: flex;
+}
+
+.uemail {
+    display: inline;
+}
+
+@media screen and (max-width: 420px) {
+    .search {
+        display: none;
+    }
+    .uemail {
+        display: none;
+    }
+    .mobile-display-none {
+        display: none;
+    }
+    .footer .list-group-item {
+        max-width: 45% !important;
+        min-width: 53% !important;
+        font-size: x-small;
+        width: 100vw;
+        padding: 0 !important;
+    }
+    .logo-circle-footer {
+        width: 30% !important;
+        margin-left: 0.3em !important;
+    }
+    .footer .card-text, .footer .card-title {
+        text-align: center;
+    }
+    .footer .copyright {
+        font-size: small;
+    }
+}
+
+/* #toast-container {
+    margin: 0 auto;
+    left: 40%;
+    z-index: 9000;
+} */
+
+.no-border {
+    border: none !important;
+}
+
+.logo-circle-footer {
+    width: 75%;
+    margin-left: 0.3em !important;
+}
+
+.footer .list-group-item {
+    max-width: 30% !important;
+    min-width: 35% !important;
+    font-size: small;
+}
+
+.footer .card-text {
+    font-size: small;
+}
+
+.hidden {
+    display: none;
+}
+
+.search-input {
+    width: 30vw !important;
+}
+
+.w-4 {
+    width: 4%;
+}
+
+.w-5 {
+    width: 5%;
+}
+
+.w-10 {
+    width: 10%;
+}
+
+.logo-footer {
+    margin-top: -4px;
+}
+
+.logo-circle-footer {
+    margin-left: -1em;
+}

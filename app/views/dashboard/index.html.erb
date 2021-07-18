@@ -1,0 +1,160 @@
+
+<div class="container"  style="margin-top: 6em;">
+    
+    <div class="row mt-5">
+        <div class="col-12 bg-dark p-4" style="margin-top:-1em;">
+
+        <h1>Dashboard</h1>
+        <h6 class="text-primary"><%= current_user.email %></h6>
+
+        </div>
+    </div>
+
+  <div class="row row-cols-1 row-cols-md-3 g-4 mt-2">
+    <div class="col">
+      <div class="card text-center bg-dark">
+
+        <div class="card-body d-grid">
+          <h5 class="card-title">Meine Daten</h5>
+          <p class="card-text text-muted">Hier findest du deine Daten</p>
+
+          <%= link_to "Öffnen", dashboard_data_path, class: 'btn btn-primary btn-sm' %>
+        </div>
+
+      </div>
+    </div>
+    <div class="col">
+      <div class="card text-center bg-dark">
+
+        <div class="card-body d-grid">
+          <h5 class="card-title">Statistiken</h5>
+          <p class="card-text text-muted">Hier findest du deine Statisken</p>
+
+          <%= link_to "Öffnen", dashboard_stats_path, class: 'btn btn-primary btn-sm' %>
+        </div>
+
+      </div>
+    </div>
+    <div class="col">
+      <div class="card text-center bg-dark">
+
+        <div class="card-body d-grid">
+          <h5 class="card-title">Meine Artikel</h5>
+          <p class="card-text text-muted">Hier findest du deine Artikel</p>
+
+          <%= link_to "Öffnen", dashboard_articles_path, class: 'btn btn-primary btn-sm' %>
+        </div>
+
+      </div>
+    </div>
+    <div class="col">
+      <div class="card text-center bg-dark">
+
+        <div class="card-body d-grid">
+          <h5 class="card-title">Meine Videos</h5>
+          <p class="card-text text-muted">Hier findest du deine Videos</p>
+
+          <%= link_to "Öffnen", dashboard_videos_path, class: 'btn btn-primary btn-sm' %>
+        </div>
+
+      </div>
+    </div>
+    <div class="col">
+      <div class="card text-center bg-dark">
+
+        <div class="card-body d-grid">
+          <h5 class="card-title">Meine Podcasts</h5>
+          <p class="card-text text-muted">Hier findest du deine Podcasts</p>
+
+          <%= link_to "Öffnen", dashboard_podcasts_path, class: 'btn btn-primary btn-sm' %>
+        </div>
+
+      </div>
+    </div>
+    <div class="col">
+      <div class="card text-center bg-dark">
+
+        <div class="card-body d-grid">
+          <h5 class="card-title">Meine Jobs</h5>
+          <p class="card-text text-muted">Hier findest du deine Jobs</p>
+
+          <%= link_to "Öffnen", dashboard_jobs_path, class: 'btn btn-primary btn-sm' %>
+        </div>
+
+      </div>
+    </div>
+    <div class="col">
+      <div class="card text-center bg-dark">
+
+        <div class="card-body d-grid">
+          <h5 class="card-title">Meine Diskussionen</h5>
+          <p class="card-text text-muted">Hier findest du deine Diskussionen</p>
+
+          <%= link_to "Öffnen", dashboard_discuss_path, class: 'btn btn-primary btn-sm' %>
+        </div>
+
+      </div>
+    </div>
+    <div class="col">
+      <div class="card text-center bg-dark">
+
+        <div class="card-body d-grid">
+          <h5 class="card-title">Gespeicherte Artikel</h5>
+          <p class="card-text text-muted">Hier findest du deine gespeicherten Artikel</p>
+
+          <%= link_to "Öffnen", dashboard_saved_articles_path, class: 'btn btn-primary btn-sm' %>
+        </div>
+
+      </div>
+    </div>
+    <div class="col">
+      <div class="card text-center bg-dark">
+
+        <div class="card-body d-grid">
+          <h5 class="card-title">Liked Artikel</h5>
+          <p class="card-text text-muted">Hier findest du deine gelikedten Artikel</p>
+
+          <%= link_to "Öffnen", dashboard_liked_articles_path, class: 'btn btn-primary btn-sm' %>
+        </div>
+
+      </div>
+    </div>
+    <div class="col">
+      <div class="card text-center bg-dark">
+
+        <div class="card-body d-grid">
+          <h5 class="card-title">Follows</h5>
+          <p class="card-text text-muted">Hier findest du deine Follows^</p>
+
+          <%= link_to "Öffnen", dashboard_follows_path, class: 'btn btn-primary btn-sm' %>
+        </div>
+
+      </div>
+    </div>
+    <div class="col">
+      <div class="card text-center bg-dark">
+
+        <div class="card-body d-grid">
+          <h5 class="card-title">Öffentliches Profil</h5>
+          <p class="card-text text-muted">Hier findest du dein Profil</p>
+
+          <%= link_to "Öffnen", dashboard_profile_path, class: 'btn btn-primary btn-sm' %>
+        </div>
+
+      </div>
+    </div>
+    <div class="col">
+      <div class="card text-center bg-dark">
+
+        <div class="card-body d-grid">
+          <h5 class="card-title">Einstellungen</h5>
+          <p class="card-text text-muted">Hier findest du deine Einstellungen</p>
+
+          <%= link_to "Öffnen", dashboard_settings_path, class: 'btn btn-primary btn-sm' %>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div> <!-- container -->

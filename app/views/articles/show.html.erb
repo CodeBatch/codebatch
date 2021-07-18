@@ -1,0 +1,71 @@
+<div class="container" style="margin-top: 5em;">
+<div class="row">
+<div class="col-12">
+
+<a href="/articles" class="btn btn-primary btn-sm">
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-double-left" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M8.354 1.646a.5.5 0 0 1 0 .708L2.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+    <path fill-rule="evenodd" d="M12.354 1.646a.5.5 0 0 1 0 .708L6.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+  </svg> All Articles
+</a>
+
+<br><br>
+
+<div class="card w-100 bg-dark">
+  <img src="https://via.placeholder.com/900x300/000000" class="card-img-top mb-4" alt="...">
+  <div class="card-body">
+    <h1 class="card-title"><%= @article.title %></h1>
+    <h5>Author: <%= @article.user_email %></h5>
+    <p><strong>Description: <%= @article.description %></strong></p>
+    <p class="card-text"><%= @article.body %></p>
+  
+    <div>
+    <% if user_signed_in? %>
+      <% if @article.liked?(current_user) %>
+        <%= button_to "Unlike", unlike_path(@article), method: "delete" %>
+      <% else %>
+        <%= button_to "Like", like_path(@article), method: "put" %>
+      <% end %>
+    <% end %>
+  </div>
+  
+  <div>
+    <% if user_signed_in? %>
+      <% if @article.stored?(current_user) %>
+        <%= button_to "Unsave", unstore_path(@article), method: "delete" %>
+      <% else %>
+        <%= button_to "Save", store_path(@article), method: "put" %>
+      <% end %>
+    <% end %>
+  </div>
+
+    <p>Likes: <%= @article.likes.count %></p>
+    <!-- <p>Saved: <%= @article.stores.count %></p> -->
+  </div>
+</div>
+
+<div class="card w-100 bg-dark mt-4 position-relative">
+    <div class="card-body">
+        <h2 class="card-title">Comments</h2>
+        <p>Comments: <%= @article.comments.count %></p>
+        <%= render @article.comments %>
+    </div>
+</div>
+
+<div class="card w-100 bg-dark mt-4 position-relative">
+  <div class="card-body">
+    <h5>Add a comment:</h5>
+    <% if user_signed_in? %>
+        <p class="card-text"><%= render 'comments/form' %></p>
+        <% else %>
+        <p>
+            <%= link_to('Only members can create comments. Please Sign up or Log in and come back!', new_user_session_path, class: 'btn btn-link btn-dark')  %> 
+        </p>
+    <% end %>
+  </div>
+</div>
+
+
+</div>
+</div>
+</div>

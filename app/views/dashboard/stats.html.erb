@@ -1,0 +1,44 @@
+
+<div class="container"  style="margin-top: 6em;">
+    
+<div class="row mt-5">
+    <div class="col-12 bg-dark p-4" style="margin-top:-1em;">
+
+    <h1>Statistiken</h1>
+    <h6 class="text-primary"><%= current_user.email %></h6>
+
+    </div>
+</div>
+
+<div class="row mt-4">
+<div class="col-12 bg-dark">
+
+<p>Your liked articles: </p>
+<p>You have <%= @likes.count %> article(s) liked</p>
+
+<% @likes.each do |like| %>
+    <ul>
+        <li><a href='<%= like.article_path %>'><%= like.article_title %></a></li>
+    </ul>
+ <% end %>
+
+</div>
+</div>
+
+
+<div class="row mt-4">
+<div class="col-12 bg-dark">
+
+<p>Your saved articles: </p>
+<p>You have <%= @stores.count %> article(s) saved</p>
+
+<% @stores.each do |store| %>
+    <ul>
+        <li><a href='<%= store.article_url %>'><%= store.article_title %></a></li>
+    </ul>
+ <% end %>
+
+</div>
+</div>
+
+</div> <!-- container -->
