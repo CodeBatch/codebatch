@@ -1,0 +1,13 @@
+<p>
+    <strong>Commenter:</strong>
+    <%= video_comment.commenter %>
+</p>
+
+<p>
+    <strong>Comment:</strong>
+    <%= video_comment.body %>
+</p>
+
+<p>
+    <%= link_to 'Destroy Comment', [video_comment.video, video_comment], method: :delete, data: { confirm: "Are you sure?" } %>
+</p>

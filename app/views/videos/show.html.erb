@@ -1,0 +1,17 @@
+<h1><%= @video.title %></h1>
+
+<p><%= @video.body %></p>
+
+<ul>
+    <li><%= link_to "Edit", edit_video_path(@video) %></li>
+    <li><%= link_to "Destroy", video_path(@video), method: :delete, data: { confirm: "Are you sure?" } %>
+    </li>
+</ul>
+
+<h2>Comments</h2>
+
+<%= render @video.video_comments %>
+
+<h2>Add a comment:</h2>
+
+<%= render 'video_comments/form' %>

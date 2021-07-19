@@ -9,11 +9,15 @@ Rails.application.routes.draw do
   root to: "home#index"
 
   get '/contact', to: "contact#index"
+  
   get '/code_of_conduct/de', to: "code_of_conduct#index"
   get '/code_of_conduct/en', to: "code_of_conduct#en"
 
   get '/terms_of_use/de', to: "terms_of_use#index"
   get '/terms_of_use/en', to: "terms_of_use#en"
+
+  get '/privacy_police/de', to: "privacy_police#index"
+  get '/privacy_police/en', to: "privacy_police#en"
 
   get '/dashboard', to: "dashboard#index"
   get '/dashboard/articles', to: "dashboard#articles"
@@ -29,8 +33,8 @@ Rails.application.routes.draw do
   get '/dashboard/saved_articles', to: "dashboard#saved_articles"
   get '/dashboard/liked_articles', to: "dashboard#liked_articles"
 
-  resources :articles do resources :comments
-  end
+  resources :articles do resources :comments end
+  resources :videos do resources :video_comments end
 
   put '/articles/:id/like', to: "articles#like", as: 'like'
   delete '/articles/:id/unlike', to: "articles#unlike", as: 'unlike'

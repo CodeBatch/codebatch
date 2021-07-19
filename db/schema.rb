@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_07_183021) do
+ActiveRecord::Schema.define(version: 2021_07_19_004658) do
 
   create_table "articles", force: :cascade do |t|
     t.string "title"
@@ -33,6 +33,20 @@ ActiveRecord::Schema.define(version: 2021_07_07_183021) do
     t.index ["article_id"], name: "index_comments_on_article_id"
   end
 
+  create_table "discussions", force: :cascade do |t|
+    t.string "title"
+    t.text "body"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "helps", force: :cascade do |t|
+    t.string "title"
+    t.text "body"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "likes", force: :cascade do |t|
     t.integer "user_id", null: false
     t.integer "article_id", null: false
@@ -42,6 +56,27 @@ ActiveRecord::Schema.define(version: 2021_07_07_183021) do
     t.string "article_title"
     t.index ["article_id"], name: "index_likes_on_article_id"
     t.index ["user_id"], name: "index_likes_on_user_id"
+  end
+
+  create_table "listings", force: :cascade do |t|
+    t.string "title"
+    t.text "body"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "news", force: :cascade do |t|
+    t.string "title"
+    t.text "body"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "podcasts", force: :cascade do |t|
+    t.string "title"
+    t.text "body"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "saved_articles", force: :cascade do |t|
@@ -89,6 +124,24 @@ ActiveRecord::Schema.define(version: 2021_07_07_183021) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "video_comments", force: :cascade do |t|
+    t.string "commenter"
+    t.text "body"
+    t.integer "video_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "status"
+    t.index ["video_id"], name: "index_video_comments_on_video_id"
+  end
+
+  create_table "videos", force: :cascade do |t|
+    t.string "title"
+    t.text "body"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "status"
+  end
+
   add_foreign_key "comments", "articles"
   add_foreign_key "likes", "articles"
   add_foreign_key "likes", "users"
@@ -98,4 +151,5 @@ ActiveRecord::Schema.define(version: 2021_07_07_183021) do
   add_foreign_key "saves", "users"
   add_foreign_key "stores", "articles"
   add_foreign_key "stores", "users"
+  add_foreign_key "video_comments", "videos"
 end

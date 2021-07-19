@@ -1,0 +1,15 @@
+<h1>Videos</h1>
+
+<%= Video.public_count %> Videos in the Database
+
+<ul>
+    <% @videos.each do |video| %>
+        <% unless video.archived? %>
+            <li>
+                <%= link_to video.title, video %>
+            </li>
+        <% end %>
+    <% end %>
+</ul>
+
+<%= link_to "New Video", new_video_path %>
