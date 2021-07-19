@@ -42,5 +42,6 @@ Rails.application.routes.draw do
   put '/articles/:id/store', to: "articles#store", as: 'store'
   delete '/articles/:id/unstore', to: "articles#unstore", as: 'unstore'
 
+  
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
