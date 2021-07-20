@@ -1,15 +1,50 @@
-<h1>Videos</h1>
+<div class="container" style="margin-top: 5em;">
+    <div class="row bg-dark p-3 mt-4 mb-4">
+        <h1>Videos</h1>
+        <h6 class="text-primary"><%= Video.public_count %> videos in the
+            database and counting!</h6>
+    </div>
 
-<%= Video.public_count %> Videos in the Database
+    <div class="row row-cols-1 row-cols-md-2 g-4">
 
-<ul>
-    <% @videos.each do |video| %>
+        <% @videos.each do |video| %>
         <% unless video.archived? %>
-            <li>
-                <%= link_to video.title, video %>
-            </li>
-        <% end %>
-    <% end %>
-</ul>
 
-<%= link_to "New Video", new_video_path %>
+        <div class="col-4">
+            <div class="card bg-dark h-100">
+
+                <img src="https://via.placeholder.com/300x150/000000"
+                    class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <%= link_to video.title, video_path(video) %></h5>
+                    <p class="card-text"><%= video.description %></p>
+                </div>
+                <div class="card-footer">
+                    <span class="d-flex flex-row-reverse">
+                        <% if user_signed_in? %>
+                        <%= link_to "Like", video_path(video), class: 'btn btn-danger btn-sm' %>&ensp;
+                        <%= link_to "Save", video_path(video), class: 'btn btn-success btn-sm'  %>&ensp;
+                        <% end %>
+                        <%= link_to "Show", video_path(video), class: 'btn btn-primary btn-sm'  %>
+                    </span>
+                    <div class="d-flex">
+                        <small
+                            class="d-flex flex-row text-warning"><%= video.video_comments.count %>
+                            Comment(s)</small>&emsp;
+                        <small
+                            class="d-flex flex-row text-danger"><%= video.video_likes.count %>
+                            Like(s)</small>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <% end %>
+        <% end %>
+
+        <%= link_to "New Video", new_video_path %>
+
+    </div>
+</div>

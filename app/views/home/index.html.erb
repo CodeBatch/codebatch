@@ -15,7 +15,7 @@
         <%= image_tag "cb_wallpaper-black-logo-v4-purple-transparent.png", class: 'w-100' %>
         <div class="card-body">
         <h5 class="card-title">CodeBatch</h5>
-        <p class="card-text">CodeBatch is a community of amazing developers. We are a place where coders share, stay up-to-date and grow their careers.</p>
+        <p class="card-text"><%= t('home.index.description') %></p>
         <div class="d-grid gap-2">
         <% if user_signed_in? %>
             <div class="d-flex justify-content-center"><%= current_user.email %></div>

@@ -1,1 +1,10 @@
-// @import 'toastr'
+@import 'toastr';
+
+#toast-container > div {
+    margin: 0 auto !important;
+    z-index: 9000 !important;
+    position: fixed !important;
+    bottom: 12px !important;
+    left: 50% !important;
+    transform: translate(-50%) !important;
+}

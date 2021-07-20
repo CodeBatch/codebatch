@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_19_004658) do
+ActiveRecord::Schema.define(version: 2021_07_20_000138) do
 
   create_table "articles", force: :cascade do |t|
     t.string "title"
@@ -134,12 +134,31 @@ ActiveRecord::Schema.define(version: 2021_07_19_004658) do
     t.index ["video_id"], name: "index_video_comments_on_video_id"
   end
 
+  create_table "video_likes", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "video_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_video_likes_on_user_id"
+    t.index ["video_id"], name: "index_video_likes_on_video_id"
+  end
+
   create_table "videos", force: :cascade do |t|
     t.string "title"
     t.text "body"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "status"
+    t.text "description"
+  end
+
+  create_table "videos_likes", force: :cascade do |t|
+    t.integer "user_id_id", null: false
+    t.integer "video_id_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id_id"], name: "index_videos_likes_on_user_id_id"
+    t.index ["video_id_id"], name: "index_videos_likes_on_video_id_id"
   end
 
   add_foreign_key "comments", "articles"
@@ -152,4 +171,8 @@ ActiveRecord::Schema.define(version: 2021_07_19_004658) do
   add_foreign_key "stores", "articles"
   add_foreign_key "stores", "users"
   add_foreign_key "video_comments", "videos"
+  add_foreign_key "video_likes", "users"
+  add_foreign_key "video_likes", "videos"
+  add_foreign_key "videos_likes", "user_ids"
+  add_foreign_key "videos_likes", "video_ids"
 end

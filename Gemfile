@@ -25,6 +25,9 @@ gem 'jbuilder', '~> 2.7'
 # Use devise authentication
 gem 'devise'
 
+# I18n Translations
+gem 'rails-i18n'
+
 # Bootstrap 5
 # gem 'bootstrap', '~> 5.0.1'
 

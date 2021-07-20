@@ -30,4 +30,11 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+    home:
+        index:
+            description: "CodeBatch is a community of amazing developers. We are a place where coders share, stay up-to-date and grow their careers."
+    devise:
+        sessions:
+            signed_in: "Signed in successfully."
+            signed_out: "Signed out successfully."
+            already_signed_out: "Signed out successfully."
