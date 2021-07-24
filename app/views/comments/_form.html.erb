@@ -1,17 +1,18 @@
 <%= form_with model: [ @article, @article.comments.build ] do |form| %>
-    <p>
-        <%= form.label :commenter %><br>
-        <%= form.text_field :commenter %>
+    <p class="text-muted">
+        <small>You are logged in as: <strong><%= current_user.email %></strong></small>
+        <%= form.hidden_field :commenter, value: current_user.email, class: 'bg-dark', :disabled => true %>
     </p>
     <p>
-        <%= form.label :body %><br>
-        <%= form.text_area :body %>
+        <%= form.label 'Your comment:' %><br>
+        <%= form.text_area :body, class: 'bg-lightdark text-light no-border' %><br>
+        <small class="text-muted">Markdown support: <span class="text-success">active</span></small>
     </p>
-    <p>
+    <p style="display: none;">
         <%= form.label :status %><br>
         <%= form.select :status, ['public','private','archived'], selected: 'public' %>
     </p>
     <p>
-        <%= form.submit %>
+        <%= form.submit 'Create comment', class: 'btn btn-primary btn-sm' %>
     </p>
 <% end %>

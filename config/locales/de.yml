@@ -1,7 +1,65 @@
 de:
+    nav:
+        my-user-panel: "Mein Benutzerbereich"
+        my-data: "Meine Daten"
+        my-stats: "Meine Statistiken"
+        my-articles: "Meine Artikel"
+        my-videos: "Meine Videos"
+        my-podcasts: "Meine Podcasts"
+        my-jobs: "Meine Jobs"
+        my-discussions: "Meine Diskussionen"
+        my-saved-articles: "Meine gespeicherten Artikel"
+        my-liked-articles: "Meine Liked Artikel"
+        my-follows: "Meine Follows"
+        my-profile: "Mein Profil"
+        my-settings: "Meine Einstellungen"
+        german: "Deutsch"
+        english: "Englisch"
+        signup: "Registrieren"
+        login: "Anmelden"
+        start:
+            html: "&ensp; Start"
+        articles:
+            html: "&ensp; Artikel"
+        listings:
+            html: "&ensp; Einträge"
+        videos:
+            html: "&ensp; Videos"
+        podcasts:
+            html: "&ensp; Podcasts"
+        news:
+            html: "&ensp; Neuigkeiten"
+        discussions:
+            html: "&ensp; Diskussionen"
+        help:
+            html: "&ensp; Hilfe"
+        about-us:
+            html: "&ensp; Über Uns"
+        contact:
+            html: "&ensp; Kontakt"
+        tags:
+            html: "&ensp; Tags"
+        code-of-conduct:
+            html: "&ensp; Verhaltenskodex"
+        terms-of-use:
+            html: "&ensp; Nutzungsbedingungen"
+        faq:
+            html: "&ensp; FAQ"
+        codebatch-shop:
+            html: "&ensp; CodeBatch Shop"
+        sponsors:
+            html: "&ensp; Sponsoren"
+        privacy:
+            html: "&ensp; Datenschutz"
+        description:
+            html: '<strong><span class="text-warning">CodeBatch</span> ist eine Community von großartigen Entwicklern</strong>.<br>Wir sind ein Ort, an dem Programmierer teilen, auf dem Laufenden bleiben und ihre Karriere vorantreiben.'
     home:
         index:
-            description: "CodeBatch ist eine Community von großartigen Entwicklern. Wir sind ein Ort, an dem Programmierer teilen, auf dem Laufenden bleiben und ihre Karriere vorantreiben."
+            description:
+                html: '<strong><span class="text-warning">CodeBatch</span> ist eine Community von großartigen Entwicklern</strong>.<br>Wir sind ein Ort, an dem Programmierer teilen, auf dem Laufenden bleiben und ihre Karriere vorantreiben.'
+    dashboard:
+        index:
+            title: "Benutzerbereich"
     devise:
         sessions:
             signed_in: "Erfolgreich angemeldet!"

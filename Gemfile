@@ -28,6 +28,9 @@ gem 'devise'
 # I18n Translations
 gem 'rails-i18n'
 
+# Redcarpet Markdown Parser
+gem 'redcarpet'
+
 # Bootstrap 5
 # gem 'bootstrap', '~> 5.0.1'
 

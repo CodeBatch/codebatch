@@ -17,7 +17,7 @@
     <h1 class="card-title"><%= @article.title %></h1>
     <h5>Author: <%= @article.user_email %></h5>
     <p><strong>Description: <%= @article.description %></strong></p>
-    <p class="card-text"><%= @article.body %></p>
+    <p class="card-text"><%= markdown(@article.body) %></p>
   
     <div>
     <% if user_signed_in? %>

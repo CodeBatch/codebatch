@@ -1,6 +1,6 @@
 <h1><%= @video.title %></h1>
 
-<p><%= @video.body %></p>
+<p><%= markdown(@video.body) %></p>
 
 <ul>
     <li><%= link_to "Edit", edit_video_path(@video) %></li>

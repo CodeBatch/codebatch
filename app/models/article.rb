@@ -1,6 +1,4 @@
 class Article < ApplicationRecord
-  belongs_to :article
-
   include Visible
   has_many :comments, dependent: :destroy
   

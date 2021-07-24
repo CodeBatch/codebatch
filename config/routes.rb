@@ -11,15 +11,9 @@ Rails.application.routes.draw do
     }
 
     get '/contact', to: "contact#index"
-    
-    get '/code_of_conduct/de', to: "code_of_conduct#index"
-    get '/code_of_conduct/en', to: "code_of_conduct#en"
-
+    get '/code_of_conduct', to: "code_of_conduct#index"
     get '/terms_of_use', to: "terms_of_use#index"
-    # get '/terms_of_use', to: "terms_of_use#en"
-
-    get '/privacy_police/de', to: "privacy_police#index"
-    get '/privacy_police/en', to: "privacy_police#en"
+    get '/privacy_police', to: "privacy_police#index"
 
     get '/dashboard', to: "dashboard#index"
     get '/dashboard/articles', to: "dashboard#articles"
@@ -47,10 +41,7 @@ Rails.application.routes.draw do
     put '/videos/:id/video_like', to: "videos#video_like", as: 'video_like'
     delete '/videos/:id/video_unlike', to: "videos#video_unlike", as: 'video_unlike'
 
-
   end
-
-  
   
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
