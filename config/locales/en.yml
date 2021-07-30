@@ -13,8 +13,10 @@ en:
         my-follows: "My Follows"
         my-profile: "My Profile"
         my-settings: "My Settings"
-        german: "German"
-        english: "English"
+        german:
+            html: "&ensp; German"
+        english:
+            html: "&ensp; English"
         signup: "Signup"
         login: "Login"
         start:

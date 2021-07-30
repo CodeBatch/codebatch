@@ -12,6 +12,9 @@ class Article < ApplicationRecord
       !!self.stores.find{|store| store.user_id == user.id}
   end
 
+  VALID_STATUSES = ['public','private','archived']
+
+  validates :status, inclusion: { in: VALID_STATUSES }
   
   def self.search(search)
     # Title is for the above case, the OP incorrectly had 'name'

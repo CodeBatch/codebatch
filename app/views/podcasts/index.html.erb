@@ -1,2 +1,55 @@
-<h1>Podcasts#index</h1>
-<p>Find me in app/views/podcasts/index.html.erb</p>
+<div class="container" style="margin-top: 5em;">
+    <div class="row bg-dark p-3 mt-4 mb-4">
+        <h1>Podcasts</h1>
+        <h6 class="text-primary"><%= Podcast.public_count %> podcasts in the
+            database and counting!</h6>
+    </div>
+
+    <div class="row row-cols-1 row-cols-md-2 g-4">
+
+        <% @podcasts.each do |podcast| %>
+        <% unless podcast.archived? %>
+
+        <div class="col-4">
+            <div class="card bg-dark h-100">
+
+                <img src="https://via.placeholder.com/300x150/000000"
+                    class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <%= link_to podcast.title, podcast_path(podcast) %></h5>
+                    <p class="card-text"><%= podcast.description %></p>
+                </div>
+                <div class="card-footer">
+                    <span class="d-flex flex-row-reverse">
+                        
+ <% if user_signed_in? %>
+                        <%= link_to "Like", podcast_path(podcast), class: 'btn btn-danger btn-sm' %>&ensp;
+                        <%= link_to "Save", podcast_path(podcast), class: 'btn btn-success btn-sm'  %>&ensp;
+                        <% end %>
+                        <%= link_to "Show", podcast_path(podcast), class: 'btn btn-primary btn-sm'  %>
+                    </span>
+                    <%
+=begin%>
+ <div class="d-flex">
+                        <small
+                            class="d-flex flex-row text-warning"><%= video.video_comments.count %>
+                            Comment(s)</small>&emsp;
+                        <small
+                            class="d-flex flex-row text-danger"><%= video.video_likes.count %>
+                            Like(s)</small>
+                    </div> 
+<%
+=end%>
+                </div>
+
+            </div>
+        </div>
+
+        <% end %>
+        <% end %>
+
+        <%= link_to "New Podcast", new_podcast_path %>
+
+    </div>
+</div>

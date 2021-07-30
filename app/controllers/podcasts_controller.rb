@@ -16,7 +16,7 @@ class PodcastsController < ApplicationController
   end
 
   def create
-    @podcast = Podcast.new(Podcast_params)
+    @podcast = Podcast.new(podcast_params)
 
     if @podcast.save
       redirect_to @podcast
@@ -32,7 +32,7 @@ class PodcastsController < ApplicationController
   def update
     @podcast = Podcast.find(params[:id])
 
-    if @podcast.update(Podcast_params)
+    if @podcast.update(podcast_params)
       redirect_to @podcast
     else
       render :edit
@@ -43,35 +43,35 @@ class PodcastsController < ApplicationController
     @podcast = Podcast.find(params[:id])
     @podcast.destroy
 
-    redirect_to Podcasts_path #e.g. Podcasts_path
+    redirect_to podcasts_path #e.g. Podcasts_path
   end
 
   def like
     @podcast = Podcast.all.find(params[:id])
-    Like.create(user_id: current_user.id, Podcast_id: @podcast.id, Podcast_path: Podcast_url, Podcast_title: @podcast.title)
-    redirect_to Podcast_path(@podcast)
+    Like.create(user_id: current_user.id, podcast_id: @podcast.id, podcast_path: podcast_url, podcast_title: @podcast.title)
+    redirect_to podcast_path(@podcast)
   end
 
   def unlike
     @podcast = Podcast.all.find(params[:id])
-    Like.where(Podcast_id: @podcast).destroy_all
-    redirect_to Podcast_path(@podcast)
+    Like.where(podcast_id: @podcast).destroy_all
+    redirect_to podcast_path(@podcast)
   end
 
   def store
     @podcast = Podcast.all.find(params[:id])
-    Store.create(user_id: current_user.id, Podcast_id: @podcast.id, Podcast_url: Podcast_url, Podcast_title: @podcast.title)
-    redirect_to Podcast_path(@podcast)
+    Store.create(user_id: current_user.id, podcast_id: @podcast.id, podcast_url: podcast_url, podcast_title: @podcast.title)
+    redirect_to podcast_path(@podcast)
   end
 
   def unstore
     @podcast = Podcast.all.find(params[:id])
-    Store.where(Podcast_id: @podcast).destroy_all
-    redirect_to Podcast_path(@podcast)
+    Store.where(podcast_id: @podcast).destroy_all
+    redirect_to podcast_path(@podcast)
   end
 
   private
-    def Podcast_params
-      params.require(:Podcast).permit(:title, :description, :body, :status, :user_id, :user_email, :search)
+    def podcast_params
+      params.require(:podcast).permit(:title, :description, :body, :status, :user_id, :user_email, :search)
     end
 end

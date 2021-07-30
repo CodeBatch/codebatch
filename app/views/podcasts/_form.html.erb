@@ -1,0 +1,44 @@
+<%= form_with model: @podcast do |form| %>
+<div>
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+    <% @podcast.errors.full_messages_for(:title).each do |message| %>
+    <div class="alert alert-danger" role="alert"><%= message %></div>
+    <% end %>
+</div>
+
+<div>
+    <%= form.label :description %><br>
+    <%= form.text_area :description %><br>
+    <% podcast.errors.full_messages_for(:description).each do |message| %>
+    <div class="alert alert-danger" role="alert"><%= message %></div>
+    <% end %>
+</div>
+
+<div>
+    <%= form.label :body %>
+    <%= form.text_area :body %>
+    <% @podcast.errors.full_messages_for(:body).each do |message| %>
+    <%= message %>
+    <% end %>
+</div>
+
+<div>
+    <%= form.label :status %><br>
+    <%= form.select :status, ['public', 'private', 'archived'], selected: 'public' %>
+</div>
+
+<div>
+    <%= form.hidden_field :user_id, value: current_user.id %>
+</div>
+
+<div>
+    <%= form.hidden_field :user_email, value: current_user.email %>
+</div>
+
+<br>
+
+<div>
+    <%= form.submit %>
+</div>
+<% end %>

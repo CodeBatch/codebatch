@@ -1,0 +1,69 @@
+@import "application";
+
+html,
+body {
+    background-color: #ced4da;
+    color: $dark;
+    height: 100%;
+}
+
+.bg-dark {
+    background-color: #f8f9fa !important;
+}
+
+.dropdown-toggle::after,
+.bi {
+    color: $dark !important;
+}
+
+a {
+    text-decoration: none;
+    color: $dark;
+    outline: none;
+}
+
+a:link {
+    color: $dark;
+}
+
+a:visited {
+    color: $dark;
+}
+
+a:hover {
+    color: $dark;
+}
+
+a:active {
+    color: $dark;
+}
+
+a.list-group-item:hover {
+    background: #dee2e6 !important;
+    color: $dark !important;
+}
+
+.nav-user-link a {
+    color: $dark;
+}
+
+.bg-lightdark {
+    background: #dee2e6 !important;
+}
+
+li .dropdown-item:hover {
+    background: #dee2e6 !important;
+    color: $dark !important;
+}
+
+.text-light {
+    color: $dark !important;
+}
+
+.navbar-dark .navbar-brand {
+    color: $purple-500 !important;
+}
+
+.offcanvas-title {
+    color: $purple-500 !important;
+}

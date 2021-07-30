@@ -10,6 +10,9 @@ Rails.application.routes.draw do
       registrations: 'users/registrations'
     }
 
+    get '/moon', to: 'application#moon', as: 'moon'
+    get '/sun', to: 'application#sun', as: 'sun'
+
     get '/contact', to: "contact#index"
     get '/code_of_conduct', to: "code_of_conduct#index"
     get '/terms_of_use', to: "terms_of_use#index"
@@ -31,6 +34,7 @@ Rails.application.routes.draw do
 
     resources :articles do resources :comments end
     resources :videos do resources :video_comments end
+    resources :podcasts do resources :video_comments end
 
     put '/articles/:id/like', to: "articles#like", as: 'like'
     delete '/articles/:id/unlike', to: "articles#unlike", as: 'unlike'

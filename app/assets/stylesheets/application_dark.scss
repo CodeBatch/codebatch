@@ -1,0 +1,65 @@
+@import "application";
+
+html,
+body {
+    background-color: #495057;
+    color: $light;
+    height: 100%;
+}
+
+.dropdown-toggle::after,
+.bi {
+    color: $light !important;
+}
+
+a {
+    text-decoration: none;
+    color: $light;
+    outline: none;
+}
+
+a:link {
+    color: $light;
+}
+
+a:visited {
+    color: $light;
+}
+
+a:hover {
+    color: $light;
+}
+
+a:active {
+    color: $light;
+}
+
+a.list-group-item:hover {
+    background: #343a40 !important;
+    color: $light !important;
+}
+
+.nav-user-link a {
+    color: $light;
+}
+
+.bg-lightdark {
+    background: #343a40 !important;
+}
+
+li .dropdown-item:hover {
+    background: #343a40 !important;
+    color: $light !important;
+}
+
+.text-light {
+    color: $light !important;
+}
+
+.navbar-dark .navbar-brand {
+    color: $purple-500 !important;
+}
+
+.offcanvas-title {
+    color: $purple-500 !important;
+}

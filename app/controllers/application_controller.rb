@@ -4,6 +4,26 @@ class ApplicationController < ActionController::Base
     protect_from_forgery with: :exception
 
     before_action :authenticate_user!
+
+    def moon
+    cookies[:moon] = {
+        value: 'dark mode on'
+    }
+    if user_signed_in?
+        redirect_to dashboard_path
+    else
+        redirect_to root_path
+    end
+    end
+
+    def sun
+    cookies.delete(:moon)
+    if user_signed_in?
+        redirect_to dashboard_path
+    else
+        redirect_to root_path
+    end
+    end
     
 
     def after_sign_in_path_for(resource)

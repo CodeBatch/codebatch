@@ -1,0 +1,21 @@
+<h1><%= @podcast.title %></h1>
+
+<p><%= markdown(@podcast.body) %></p>
+
+<ul>
+    <li><%= link_to "Edit", edit_podcast_path(@podcast) %></li>
+    <li><%= link_to "Destroy", podcast_path(@podcast), method: :delete, data: { confirm: "Are you sure?" } %>
+    </li>
+</ul>
+
+<%
+=begin%>
+ <h2>Comments</h2>
+
+<%= render @video.video_comments %>
+
+<h2>Add a comment:</h2>
+
+<%= render 'video_comments/form' %> 
+<%
+=end%>
