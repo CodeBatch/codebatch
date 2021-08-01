@@ -10,18 +10,18 @@ class ApplicationController < ActionController::Base
         value: 'dark mode on'
     }
     if user_signed_in?
-        redirect_to dashboard_path
+        redirect_to ''
     else
-        redirect_to root_path
+        redirect_to ''
     end
     end
 
     def sun
     cookies.delete(:moon)
     if user_signed_in?
-        redirect_to dashboard_path
+        redirect_to ''
     else
-        redirect_to root_path
+        redirect_to ''
     end
     end
     
